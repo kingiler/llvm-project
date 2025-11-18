@@ -374,6 +374,7 @@ let isReMaterializable = 1, isAsCheapAsAMove = 1 in
 def CIncOffset      : Cheri_rr<0x11, "cincoffset">;
 def : InstAlias<"add $cd, $cs1, $rs2",
                 (CIncOffset GPCR:$cd, GPCR:$cs1, GPR:$rs2), 0>;
+def CSetCapNoTrap       : Cheri_r<0x18, "csetnotrap", GPCR>;
 let isReMaterializable = 1, isAsCheapAsAMove = 1 in
 def CIncOffsetImm   : Cheri_ri<0x1, "cincoffset", 1>;
 def : InstAlias<"addi $cd, $cs1, $imm",
